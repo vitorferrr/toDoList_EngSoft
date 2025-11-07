@@ -25,7 +25,7 @@ const swaggerOptions = {
         },
         servers: [
             {
-                url: 'https://todolist-engsoft.onrender.com', 
+                url: 'https://todolist-engsoft.onrender.com/api/v1/tasks', 
             },
         ],
     },
