@@ -2,9 +2,9 @@ import express from 'express';
 
 const router = express.Router();
 
-// import { listUsers, addUser } from '../controllers/userController.js';
-// router.get('/', listUsers);
-// router.post('/', addUser);
+import { listUsers, addUser } from '../controllers/userController.js';
+router.get('/', listUsers);
+router.post('/', addUser);
 
 
 // Rota GET: Responde a requisições GET em /api/v1/users/
