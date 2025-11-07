@@ -8,61 +8,17 @@ import {
 
 const router = express.Router();
 
-/**
- * @swagger
- * /api/v1/tasks:
- * get:
- * summary: Lista todas as tarefas
- * description: Retorna uma lista de todas as tarefas cadastradas.
- * responses:
- * '200':
- * description: Uma lista de tarefas.
- * content:
- * application/json:
- * schema:
- * type: array
- * items:
- * type: object
- * properties:
- * id:
- * type: integer
- * example: 1
- * text:
- * type: string
- * example: 'Lavar a louça'
- * completed:
- * type: boolean
- * example: false
- * createdAt:
- * type: string
- * format: date-time
- */
+// GET /api/v1/tasks - Listar todas as tarefas
 router.get('/', listTasks);
 
-/**
- * @swagger
- * /api/v1/tasks:
- * post:
- * summary: Cria uma nova tarefa
- * description: Adiciona uma nova tarefa à lista.
- * requestBody:
- * required: true
- * content:
- * application/json:
- * schema:
- * type: object
- * properties:
- * text:
- * type: string
- * example: 'Passear com o cachorro'
- * responses:
- * '201':
- * description: A tarefa foi criada com sucesso.
- */
+// POST /api/v1/tasks - Criar uma nova tarefa
 router.post('/', addTask);
 
-// (O resto das rotas)
+// PATCH /api/v1/tasks/:id - Atualizar uma tarefa (ex: marcar como completa)
 router.patch('/:id', updateTaskStatus); 
+
+// DELETE /api/v1/tasks/:id - Deletar uma tarefa
 router.delete('/:id', removeTask); 
 
+// Exporta o roteador para ser usado no server.js
 export default router;
