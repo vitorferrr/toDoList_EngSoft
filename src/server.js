@@ -1,12 +1,15 @@
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
+import taskRoutes from './routes/taskRoutes.js';
 
 import swaggerUi from 'swagger-ui-express';
 import swaggerJsdoc from 'swagger-jsdoc';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use('/api/v1/tasks', taskRoutes);
 
 app.use(cors());
 app.use(express.json());
