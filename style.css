@@ -28,7 +28,7 @@ h1 {
 }
 
 #taskInput {
-    flex-grow: 1; /* O input ocupa o espaço restante */
+    flex-grow: 1;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -51,7 +51,7 @@ h1 {
 }
 
 ul {
-    list-style-type: none; /* Remove os pontinhos da lista */
+    list-style-type: none;
     padding: 0;
 }
 
@@ -62,14 +62,13 @@ li {
     border: 1px solid #eee;
     border-radius: 4px;
     display: flex;
-    justify-content: space-between; /* Alinha o texto e o botão */
+    justify-content: space-between;
     align-items: center;
-    cursor: pointer; /* Indica que o item é clicável */
+    cursor: pointer;
 }
 
-/* Estilo da tarefa quando concluída */
 li.completed {
-    text-decoration: line-through; /* Risca o texto */
+    text-decoration: line-through;
     color: #888;
     background: #f0f0f0;
 }
