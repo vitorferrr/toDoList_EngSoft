@@ -2,6 +2,30 @@ import express from 'express';
 
 const router = express.Router();
 
+/**
+ * @swagger
+ * /api/v1/users:
+ * get:
+ * summary: Lista todos os usuários
+ * description: Retorna uma lista de todos os usuários cadastrados.
+ * responses:
+ * '200':
+ * description: Uma lista de usuários.
+ * content:
+ * application/json:
+ * schema:
+ * type: array
+ * items:
+ * type: object
+ * properties:
+ * id:
+ * type: integer
+ * example: 1
+ * name:
+ * type: string
+ * example: 'João da Silva'
+ */
+
 import { listUsers, addUser } from '../controllers/userController.js';
 router.get('/', listUsers);
 router.post('/', addUser);
