@@ -1,19 +1,12 @@
-// Este bloco diz ao Prisma para gerar o cliente JavaScript
 generator client {
   provider = "prisma-client-js"
 }
 
-// ESTE BLOCO É O QUE ESTAVA FALTANDO.
-// Ele diz ao Prisma para usar o PostgreSQL e pegar a URL
-// da variável de ambiente "DATABASE_URL" (que você já configurou no Render!)
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-// ADICIONE SEU PRIMEIRO MODELO AQUI.
-// O Prisma precisa de pelo menos um modelo para gerar o cliente.
-// Este é um exemplo para o seu To-Do List.
 model Task {
   id          Int      @id @default(autoincrement())
   text        String
