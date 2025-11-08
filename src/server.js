@@ -9,8 +9,6 @@ import swaggerJsdoc from 'swagger-jsdoc';
 const app = express();
 const PORT = process.env.PORT || 10000;
 
-app.use('/api/v1/tasks', taskRoutes);
-
 app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
@@ -25,7 +23,7 @@ const swaggerOptions = {
         },
         servers: [
             {
-                url: 'https://todolist-engsoft.onrender.com/api/v1/tasks', 
+                url: 'https://todolist-engsoft.onrender.com', 
             },
         ],
     },
@@ -34,6 +32,9 @@ const swaggerOptions = {
 
 const swaggerSpecs = swaggerJsdoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
+
+
+app.use('/api/v1/tasks', taskRoutes);
 
 
 app.listen(PORT, () => {
